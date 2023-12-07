@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import userRoutes from "./routes/user.routes.js";
 import eventsRoutes from "./routes/events.routes.js";
 import cors from "cors";
+import { PORT } from './config.js'; 
 
 const app = express();
 app.use(express.json());
@@ -16,8 +17,6 @@ app.use(
 app.use(cookieParser());
 app.use(userRoutes);
 app.use(eventsRoutes);
-
-const PORT = 5000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
